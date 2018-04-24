@@ -43,6 +43,7 @@ from lib import freesans20
 WIDTH = const(128)
 HEIGHT = const(64)
 
+
 def test(use_spi=False):
     if use_spi:
         # Pyb   SSD
@@ -63,11 +64,11 @@ def test(use_spi=False):
         # Pyb   SSD
         # 3v3   Vin
         # Gnd   Gnd
-        # Y9    CLK
-        # Y10   DATA
+        # 15    CLK
+        # 4   DATA
         p16 = machine.Pin(16, machine.Pin.OUT)
-        p16.value(0)
-        time.sleep(1)
+        # p16.value(0)
+        # time.sleep(1)
         p16.value(1)
 
         pscl = machine.Pin(15, machine.Pin.OUT)
@@ -95,6 +96,3 @@ print('Device pinouts are commented in the code.')
 print('Issue:')
 print('ssd1306_test.test() for an I2C connected device.')
 print('ssd1306_test.test(True) for an SPI connected device.')
-
-test()
-

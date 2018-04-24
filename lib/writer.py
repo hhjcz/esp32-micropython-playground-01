@@ -29,6 +29,7 @@
 
 import framebuf
 
+
 class Writer(object):
     text_row = 0        # attributes common to all Writer instances
     text_col = 0
@@ -127,5 +128,3 @@ class Writer(object):
                 device.pixel(dcol, drow, data & (1 << gbit))
                 drow += 1
         Writer.text_col += char_width
-
-
