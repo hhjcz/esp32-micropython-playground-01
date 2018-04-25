@@ -38,16 +38,18 @@ def setup():
     # ssd.fill_rect(0, bts - square_side, square_side, square_side, 1)
 
     # sample text
-    wri = Writer(ssd, freesans20, verbose=False)
-    print_string('Skol !!!\n', y=2, x=30)
+    # wri = Writer(ssd, freesans20, verbose=False)
+    # print_string('Skol !!!\n', y=2, x=30)
     ssd.show()
 
 
 def print_string(text, y=30, x=50):
     global wri, ssd
-    Writer.set_clip(True, True)
-    Writer.set_textpos(y, x)
-    wri.printstring(text + '\n')
+    # Writer.set_clip(True, True)
+    # Writer.set_textpos(y, x)
+    # wri.printstring(text + '\n')
+    ssd.fill(0)
+    ssd.text(str(text), x, y)
     ssd.show()
 
 
