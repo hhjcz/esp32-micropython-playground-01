@@ -25,31 +25,29 @@ def setup():
     ssd = SSD1306_I2C(OLED_WIDTH, OLED_HEIGHT, i2c)
 
     # sample graphics
-    rhs = OLED_WIDTH - 1
-    bts = OLED_HEIGHT - 1
-    ssd.line(0, 20, 20, 0, 1)
-    ssd.line(rhs - 20, 0, rhs, 20, 1)
-    ssd.line(rhs - 20, bts, rhs, bts - 20, 1)
-    ssd.line(0, bts - 20, 20, bts, 1)
-    square_side = 10
-    ssd.fill_rect(0, 0, square_side, square_side, 1)
-    ssd.fill_rect(rhs - square_side, 0, square_side, square_side, 1)
-    ssd.fill_rect(rhs - square_side, bts - square_side, square_side, square_side, 1)
-    ssd.fill_rect(0, bts - square_side, square_side, square_side, 1)
+    # rhs = OLED_WIDTH - 1
+    # bts = OLED_HEIGHT - 1
+    # ssd.line(0, 20, 20, 0, 1)
+    # ssd.line(rhs - 20, 0, rhs, 20, 1)
+    # ssd.line(rhs - 20, bts, rhs, bts - 20, 1)
+    # ssd.line(0, bts - 20, 20, bts, 1)
+    # square_side = 10
+    # ssd.fill_rect(0, 0, square_side, square_side, 1)
+    # ssd.fill_rect(rhs - square_side, 0, square_side, square_side, 1)
+    # ssd.fill_rect(rhs - square_side, bts - square_side, square_side, square_side, 1)
+    # ssd.fill_rect(0, bts - square_side, square_side, square_side, 1)
 
     # sample text
     wri = Writer(ssd, freesans20, verbose=False)
-    Writer.set_clip(True, True)
-    Writer.set_textpos(4, 42)
-    wri.printstring('Skol\n')
+    print_string('Skol !!!\n', y=2, x=30)
     ssd.show()
 
 
-def print(text):
+def print_string(text, y=30, x=50):
     global wri, ssd
     Writer.set_clip(True, True)
-    Writer.set_textpos(32, 50)
-    wri.printstring(text + '   \n')
+    Writer.set_textpos(y, x)
+    wri.printstring(text + '\n')
     ssd.show()
 
 

@@ -18,7 +18,7 @@ def main():
         led_toggle = 1 - led_toggle
         builtin_led.value(led_toggle)
         # oled.toggle()
-        oled.print(str(randint))
+        oled.print_string(str(randint), y=20, x=50)
 
 
 main()
