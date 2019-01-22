@@ -13,7 +13,7 @@ def main():
 
     while True:
         randint = random.randint(1, 100)
-        sock.sendto("zkouska:{}|g".format(randint), (config.statsd_host, 8125))
+    #     sock.sendto("zkouska:{}|g".format(randint), (config.statsd_host, 8125))
         time.sleep(1)
         led_toggle = 1 - led_toggle
         builtin_led.value(led_toggle)
